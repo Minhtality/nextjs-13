@@ -2,12 +2,12 @@ import SideNav from "./sideNav";
 
 const UsersLayout = async ({ children }) => {
   return (
-    <section className="flex">
-      <aside className="w-1/4">
+    <div className="flex">
+      <aside id="default-sidebar" className="bg-gray-50 z-40 w-64 h-screen transition-transform" aria-label="Sidebar">
         <SideNav />
       </aside>
-      <main>{children}</main>
-    </section>
+      <div>{children}</div>
+    </div>
   );
 };
 

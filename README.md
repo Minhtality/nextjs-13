@@ -1,13 +1,11 @@
 ## Getting Started
 
-First, run the development server:
+To run the development server:
 
 ```bash
-npm run dev
-# or
+yarn
+npx prisma generate
 yarn dev
-# or
-pnpm dev
 ```
 
 ## About this project

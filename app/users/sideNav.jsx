@@ -4,9 +4,9 @@ import Link from "next/link";
 const Users = async () => {
   const { users } = await getUsers();
   return (
-    <section>
+    <>
       <h1>users</h1>
-      {users.map((user) => (
+      {users?.map((user) => (
         <Link
           key={user.id}
           href={`/users/${user.id}`}
@@ -15,7 +15,7 @@ const Users = async () => {
           {user.name}
         </Link>
       ))}
-    </section>
+    </>
   );
 };
 
