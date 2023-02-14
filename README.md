@@ -28,3 +28,9 @@ Prisma is an open-source database toolkit that makes it easy for developers to r
 ```bash
     npx prisma generate
 ```
+
+## For relational databases, use db push command to push the example schema to your own database
+
+```bash
+    npx prisma db push
+```

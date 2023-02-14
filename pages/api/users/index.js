@@ -16,7 +16,7 @@ const handler = async (req, res) => {
       const data = req.body;
       const { user, error } = await createUser(data);
       if (error) throw new Error(error);
-      return res.status(201).json(user);
+      return res.status(200).json(user);
     } catch (error) {
       return res.status(500).json({ message: error.message });
     }
