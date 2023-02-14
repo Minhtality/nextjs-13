@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Tweet from "./tweet";
 
 const User = ({ user }) => {
   return (
@@ -8,29 +9,28 @@ const User = ({ user }) => {
     // 	<p>{user?.email}</p>
     // </div>
     <div className="p-4 mt-14">
-      <div className="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-        <p className="text-2xl text-gray-400 dark:text-gray-500">
-          Hello {user.name}
-        </p>
+      <div className="flex flex-col items-center justify-center">
+        <Image
+          className="rounded-full w-100 h-100"
+          src={user?.imageUrl}
+          alt={user?.name}
+          width={200}
+          height={200}
+        />
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mt-2">
+          {user?.name}
+        </h1>
+        <p className="text-gray-600 dark:text-gray-400 mt-1">{user?.email}</p>
       </div>
-      <div className="grid grid-cols-2 gap-4 mb-4">
-        <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-          <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
-        </div>
-        <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-          <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
-        </div>
-      </div>
-      <div className="flex items-center justify-center h-48 mb-4 rounded bg-gray-50 dark:bg-gray-800">
-        <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
-      </div>
-      <div className="grid grid-cols-2 gap-4">
-        <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-          <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
-        </div>
-        <div className="flex items-center justify-center rounded bg-gray-50 h-28 dark:bg-gray-800">
-          <p className="text-2xl text-gray-400 dark:text-gray-500">+</p>
-        </div>
+      <div>
+        <h1 className="text-2xl font-bold text-gray-800 dark:text-gray-200 mt-2">
+          Tweets
+        </h1>
+        <ul>
+          {user?.tweets?.map((tw) => (
+            <Tweet key={tw.id} tweet={tw} />
+          ))}
+        </ul>
       </div>
     </div>
   );
