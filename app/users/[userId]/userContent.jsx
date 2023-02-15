@@ -3,11 +3,6 @@ import Tweet from "./tweet";
 
 const User = ({ user }) => {
   return (
-    // <div className="p-4 border-2 border-gray-200 border-dashed rounded-lg dark:border-gray-700 mt-14">
-    // 	<h1>{user?.name}</h1>
-    // 	<Image className="rounded-full w-100 h-100" src={user?.imageUrl} alt={user?.name} width={200} height={200} />
-    // 	<p>{user?.email}</p>
-    // </div>
     <div className="p-4 mt-14">
       <div className="flex flex-col items-center justify-center">
         <Image
